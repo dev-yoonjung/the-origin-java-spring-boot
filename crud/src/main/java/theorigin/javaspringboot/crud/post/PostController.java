@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 @ResponseBody
-@RequestMapping("/post")
+//@RequestMapping("/post")
 public class PostController {
     private static final Logger logger = LoggerFactory.getLogger(PostController.class);
     private final List<PostDTO> postList;
