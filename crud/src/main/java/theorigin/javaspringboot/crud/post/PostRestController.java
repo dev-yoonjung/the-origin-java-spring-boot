@@ -2,20 +2,20 @@ package theorigin.javaspringboot.crud.post;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/post")
 public class PostRestController {
     private static final Logger logger = LoggerFactory.getLogger(PostRestController.class);
-    private final List<PostDTO> postList;
+    private final PostService postService;
 
-    public PostRestController() {
-        this.postList = new ArrayList<>();
+    public PostRestController(@Autowired PostService postService) {
+        this.postService = postService;
     }
 
     // http://localhost:8080/post
@@ -25,7 +25,7 @@ public class PostRestController {
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestBody PostDTO postDTO) {
         logger.info(postDTO.toString());
-        this.postList.add(postDTO);
+        this.postService.createPost(postDTO);
     }
 
     // http://localhost:8080/post
@@ -34,7 +34,7 @@ public class PostRestController {
     @GetMapping()
     public List<PostDTO> readPostAll() {
         logger.info("in read post all");
-        return this.postList;
+        return this.postService.readPostAll();
     }
 
     // http://localhost:8080/post/0
@@ -43,7 +43,7 @@ public class PostRestController {
     @GetMapping("/{id}")
     public PostDTO readPostOne(@PathVariable("id") int id) {
         logger.info("in read post");
-        return this.postList.get(id);
+        return this.postService.readPost(id);
     }
 
     // http://localhost:8080/post/0
@@ -52,14 +52,9 @@ public class PostRestController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void updatePost(@PathVariable("id") int id, @RequestBody PostDTO postDTO) {
-        PostDTO targetPostDTO = this.postList.get(id);
-        if (postDTO.getTitle() != null) {
-            targetPostDTO.setTitle(postDTO.getTitle());
-        }
-        if (postDTO.getContent() != null) {
-            targetPostDTO.setContent(postDTO.getContent());
-        }
-        this.postList.set(id, targetPostDTO);
+        logger.info("target id: " + id);
+        logger.info("update content: " + postDTO);
+        this.postService.updatePost(id, postDTO);
     }
 
     // http://localhost:8080/post/0
@@ -68,6 +63,6 @@ public class PostRestController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deletePost(@PathVariable("id") int id) {
-        this.postList.remove(id);
+        this.postService.deletePost(id);
     }
 }
