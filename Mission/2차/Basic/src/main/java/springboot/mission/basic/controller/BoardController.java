@@ -27,7 +27,7 @@ public class BoardController {
     }
 
     @PostMapping()
-    public ResponseEntity<HttpStatus> create(@RequestBody BoardAPIRequest boardAPIRequest) {
+    public ResponseEntity<?> create(@RequestBody BoardAPIRequest boardAPIRequest) {
         try {
             this.boardService.create(boardAPIRequest);
             return new ResponseEntity<>(HttpStatus.CREATED);
@@ -48,7 +48,7 @@ public class BoardController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<HttpStatus> update(@PathVariable Long id, @RequestBody BoardAPIRequest requestBoard) {
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody BoardAPIRequest requestBoard) {
         try {
             this.boardService.update(id, requestBoard);
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
@@ -59,7 +59,7 @@ public class BoardController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         try {
             this.boardService.delete(id);
             return new ResponseEntity<>(HttpStatus.ACCEPTED);

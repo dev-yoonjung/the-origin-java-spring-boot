@@ -26,7 +26,7 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public ResponseEntity<HttpStatus> create(@RequestBody PostAPIRequest postAPIRequest) {
+    public ResponseEntity<?> create(@RequestBody PostAPIRequest postAPIRequest) {
         try {
             this.postService.create(postAPIRequest);
             return new ResponseEntity<>(HttpStatus.CREATED);
@@ -52,7 +52,7 @@ public class PostController {
     }
 
     @PutMapping("/post/{id}")
-    public ResponseEntity<HttpStatus> update(@PathVariable Long id, @RequestBody PostAPIRequest requestPost) {
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody PostAPIRequest requestPost) {
         try {
             this.postService.update(id, requestPost);
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
@@ -63,7 +63,7 @@ public class PostController {
     }
 
     @DeleteMapping("/post/{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable Long id, @RequestParam String password) {
+    public ResponseEntity<?> delete(@PathVariable Long id, @RequestParam String password) {
         try {
             this.postService.delete(id, password);
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
