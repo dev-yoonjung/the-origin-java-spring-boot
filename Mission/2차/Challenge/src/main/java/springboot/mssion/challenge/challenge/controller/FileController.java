@@ -16,6 +16,7 @@ import springboot.mssion.challenge.challenge.service.FileService;
 import springboot.mssion.challenge.challenge.util.MediaUtils;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
 @Controller
@@ -36,19 +37,19 @@ public class FileController {
         return "index";
     }
 
-    @PostMapping("/image")
+    @PostMapping("/file")
     @ResponseBody
     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
             FileAPIResponse uploadedFile = fileService.store(file);
-            return ResponseEntity.ok().body("/image/" + uploadedFile.getId());
+            return ResponseEntity.ok().body("/file/" + uploadedFile.getId());
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.badRequest().build();
         }
     }
 
-    @GetMapping("/image/{id}")
+    @GetMapping("/file/{id}")
     @ResponseBody
     public ResponseEntity<?> serveFile(@PathVariable Long id) {
         try {
@@ -56,7 +57,7 @@ public class FileController {
             HttpHeaders headers = new HttpHeaders();
 
             String fileName = responseFile.getName();
-            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + new String(fileName.getBytes(StandardCharsets.UTF_8), "ISO-8859-1") + "\"");
 
             if (MediaUtils.containsImageMediaType(responseFile.getType())) {
                 headers.setContentType(MediaType.valueOf(responseFile.getType()));

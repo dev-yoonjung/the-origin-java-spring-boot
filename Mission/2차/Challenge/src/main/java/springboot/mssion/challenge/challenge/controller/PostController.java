@@ -24,27 +24,22 @@ public class PostController {
     }
 
     @PostMapping("")
-    public String create(@RequestBody PostAPIRequest requestPost) {
+    public String create(PostAPIRequest requestPost) {
+        PostAPIResponse responsePost = null;
         try {
-            postService.create(requestPost);
+            responsePost = postService.create(requestPost);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/post/" + requestPost.getId();
+        assert responsePost != null;
+        return "redirect:/post/" + responsePost.getId();
     }
 
-    @GetMapping("")
-    public String readAll(Model model) {
-        List<PostAPIResponse> postList = this.postService.readAll();
-        model.addAttribute("postList", postList);
-        return "/post/list";
-    }
-
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public String readOne(Model model, @PathVariable Long id) {
         PostAPIResponse post = this.postService.readOne(id);
         model.addAttribute("post", post);
-        return "/post/list";
+        return "/post/detail";
     }
 
 }

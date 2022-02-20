@@ -44,8 +44,8 @@ public class FileAPILogicService implements FileService {
             Resource resource = loadAsResource(saveFileName);
 
             File fileEntity = new File();
-            fileEntity.setSavedName(saveFileName);
             fileEntity.setName(file.getOriginalFilename());
+            fileEntity.setSavedName(saveFileName);
             fileEntity.setType(file.getContentType());
             fileEntity.setPath(rootLocation.toString().replace(java.io.File.separatorChar, '/') + java.io.File.separator + saveFileName);
             fileEntity.setSize(resource.contentLength());

@@ -87,67 +87,19 @@
     }
 </style>
 <body>
-    <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                </ul>
-            </nav>
-            <h3 class="text-muted">The Origin: Java Spring Boot Challenge Mission</h3>
-        </div>
-        <div class="row marketing">
-            <div class="col-lg-12">
-                <div class="form-area">
-                    <form id="articleForm" role="form" action="/post" method="post">
-                        <br style="clear: both">
-                        <h3 style="margin-bottom: 25px;">글쓰기</h3>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="제목" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="content" name="content" placeholder="내용" maxlength="140" rows="7"></textarea>
-                        </div>
-                        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">완료</button>
-                    </form>
+<div class="container">
+    <div class="row marketing">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a href="#">${post.title}</a>
+                    </h3>
                 </div>
+                <div class="panel-body">${post.content}</div>
             </div>
         </div>
     </div>
-    <!-- /container -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#content').summernote({
-                height: 300,
-                minHeight: null,
-                maxHeight: null,
-                focus: true,
-                callbacks: {
-                    onImageUpload: function(files, editor, welEditable) {
-                        for (let i = files.length - 1; i >= 0; i--) {
-                            sendFile(files[i], this);
-                        }
-                    }
-                }
-            });
-        });
-
-        function sendFile(file, el) {
-            const form_data = new FormData();
-            form_data.append('file', file);
-            $.ajax({
-                data: form_data,
-                type: "POST",
-                url: '/file',
-                cache: false,
-                contentType: false,
-                enctype: 'multipart/form-data',
-                processData: false,
-                success: function(url) {
-                    $(el).summernote('editor.insertImage', url);
-                    $('#imageBoard > ul').append('<li><img src="'+url+'" width="480" height="auto" alt="image"/></li>');
-                }
-            });
-        }
-    </script>
+</div>
 </body>
 </html>

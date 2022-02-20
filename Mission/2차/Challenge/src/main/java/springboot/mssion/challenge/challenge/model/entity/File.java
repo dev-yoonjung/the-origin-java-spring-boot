@@ -61,7 +61,7 @@ public class File {
         return savedName;
     }
 
-    public void setSavedName(String name) {
+    public void setSavedName(String savedName) {
         this.savedName = savedName;
     }
 
@@ -94,7 +94,7 @@ public class File {
         return "File{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", name='" + savedName + '\'' +
+                ", savedName='" + savedName + '\'' +
                 ", path='" + path + '\'' +
                 ", type='" + type + '\'' +
                 ", size=" + size +
