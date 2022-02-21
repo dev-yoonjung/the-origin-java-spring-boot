@@ -1,8 +1,8 @@
-#SPRING BOOT MISSION
+# SPRING BOOT MISSION
 
-##2차 미션 스크린샷
+## 2차 미션 스크린샷
 
-###BASIC 
+### BASIC 
 
 - BOARD CREATE
 
