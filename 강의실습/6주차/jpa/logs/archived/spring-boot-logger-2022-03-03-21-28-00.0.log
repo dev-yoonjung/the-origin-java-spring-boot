@@ -1,0 +1,2 @@
+2022-03-03 21:28:00,495 INFO org.springframework.boot.StartupInfoLogger [main] Starting JpaApplication using Java 11.0.14 on DESKTOP-CC8GFNL with PID 6928 (C:\Users\o_ov0\Desktop\project-lion\강의실습\6주차\demo\build\classes\java\main started by o_ov0 in C:\Users\o_ov0\Desktop\project-lion\강의실습\6주차\demo)
+2022-03-03 21:28:00,529 INFO org.springframework.boot.SpringApplication [main] The following 1 profile is active: "test"

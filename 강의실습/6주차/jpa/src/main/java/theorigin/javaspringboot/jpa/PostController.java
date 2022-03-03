@@ -45,6 +45,17 @@ public class PostController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deletePost(@PathVariable("id") int id) {
+        logger.info("deletePost, id: {}", id);
         this.postService.deletePost(id);
     }
+
+    @GetMapping("test-log")
+    public void testLog() {
+        logger.trace("TRACE Log Message");
+        logger.debug("DEBUG Log Message");
+        logger.info("INFO Log Message");
+        logger.warn("WARN Log Message");
+        logger.error("ERROR Log Message");
+    }
+
 }
