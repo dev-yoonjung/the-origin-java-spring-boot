@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import theorigin.javaspringboot.jpa.aspect.LogExecutionTime;
+import theorigin.javaspringboot.jpa.aspect.LogArguments;
+import theorigin.javaspringboot.jpa.aspect.LogReturn;
 
 import java.util.List;
 
@@ -20,17 +23,20 @@ public class PostController {
         logger.info(gson.toString());
     }
 
+    @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestBody PostDTO postDTO) {
         this.postService.createPost(postDTO);
     }
 
+    @LogReturn
     @GetMapping("/{id}")
     public PostDTO readPost(@PathVariable("id") int id) {
         return this.postService.readPost(id);
     }
 
+    @LogExecutionTime
     @GetMapping("")
     public List<PostDTO> readPostAll() {
         return this.postService.readPostAll();

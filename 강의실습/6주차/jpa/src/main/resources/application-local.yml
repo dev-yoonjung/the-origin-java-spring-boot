@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3307/demo_jpa_schema
     username: demo_jpa
-    password: password
+    password: o_ov960709
   jpa:
     hibernate:
       ddl-auto: none

@@ -1,11 +1,10 @@
 spring:
   profiles:
-    active: test
+    active: local
 
 logging:
   level:
     root: warn
-    theorigin.javaspringboot: info
 
 custom:
   property:
