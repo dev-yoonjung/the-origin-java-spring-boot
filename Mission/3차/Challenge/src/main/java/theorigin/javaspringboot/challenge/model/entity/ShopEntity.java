@@ -14,10 +14,9 @@ public class ShopEntity extends BaseEntity {
 
     private String name;
 
-    @OneToMany(targetEntity = ShopRoleEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "shopEntity")
-    private List<ShopRoleEntity> shopRole = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private RoleEntity role;
 
     @OneToMany(targetEntity = CategoryEntity.class,
             fetch = FetchType.LAZY,
@@ -41,10 +40,10 @@ public class ShopEntity extends BaseEntity {
     public ShopEntity() {
     }
 
-    public ShopEntity(Long id, String name, List<ShopRoleEntity> shopRole, List<CategoryEntity> category, List<ShopPostEntity> shopPost, List<ShopReviewEntity> shopReview, AreaEntity areaEntity) {
+    public ShopEntity(Long id, String name, RoleEntity role, List<CategoryEntity> category, List<ShopPostEntity> shopPost, List<ShopReviewEntity> shopReview, AreaEntity areaEntity) {
         this.id = id;
         this.name = name;
-        this.shopRole = shopRole;
+        this.role = role;
         this.category = category;
         this.shopPost = shopPost;
         this.shopReview = shopReview;
@@ -67,12 +66,12 @@ public class ShopEntity extends BaseEntity {
         this.name = name;
     }
 
-    public List<ShopRoleEntity> getShopRole() {
-        return shopRole;
+    public RoleEntity getRole() {
+        return role;
     }
 
-    public void setShopRole(List<ShopRoleEntity> shopRole) {
-        this.shopRole = shopRole;
+    public void setRole(RoleEntity role) {
+        this.role = role;
     }
 
     public List<CategoryEntity> getCategory() {
@@ -112,7 +111,7 @@ public class ShopEntity extends BaseEntity {
         return "ShopEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", shopRole=" + shopRole +
+                ", role=" + role +
                 ", category=" + category +
                 ", shopPost=" + shopPost +
                 ", shopReview=" + shopReview +

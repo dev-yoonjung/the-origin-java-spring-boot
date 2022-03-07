@@ -18,19 +18,13 @@ public class CategoryEntity extends BaseEntity {
     @JoinColumn(name = "shop_id")
     private ShopEntity shopEntity;
 
-    @OneToMany(targetEntity = ItemEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "categoryEntity")
-    private List<ItemEntity> item = new ArrayList<>();
-
     public CategoryEntity() {
     }
 
-    public CategoryEntity(Long id, String name, ShopEntity shopEntity, List<ItemEntity> item) {
+    public CategoryEntity(Long id, String name, ShopEntity shopEntity) {
         this.id = id;
         this.name = name;
         this.shopEntity = shopEntity;
-        this.item = item;
     }
 
     public Long getId() {
@@ -57,21 +51,12 @@ public class CategoryEntity extends BaseEntity {
         this.shopEntity = shopEntity;
     }
 
-    public List<ItemEntity> getItem() {
-        return item;
-    }
-
-    public void setItem(List<ItemEntity> item) {
-        this.item = item;
-    }
-
     @Override
     public String toString() {
         return "CategoryEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", shopEntity=" + shopEntity +
-                ", item=" + item +
                 '}';
     }
 }

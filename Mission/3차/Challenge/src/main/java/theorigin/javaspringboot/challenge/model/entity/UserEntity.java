@@ -20,10 +20,10 @@ public class UserEntity extends BaseEntity {
     @JoinColumn(name = "area_id")
     private AreaEntity areaEntity;
 
-    @OneToMany(targetEntity = UserRoleEntity.class,
+    @OneToMany(targetEntity = RoleEntity.class,
             fetch = FetchType.LAZY,
             mappedBy = "userEntity")
-    private Set<UserRoleEntity> userRole = new HashSet<>();
+    private Set<RoleEntity> role = new HashSet<>();
 
     @OneToMany(targetEntity = ShopReviewEntity.class,
             fetch = FetchType.LAZY,
@@ -33,11 +33,11 @@ public class UserEntity extends BaseEntity {
     public UserEntity() {
     }
 
-    public UserEntity(Long id, String name, AreaEntity areaEntity, Set<UserRoleEntity> userRole, List<ShopReviewEntity> shopReview) {
+    public UserEntity(Long id, String name, AreaEntity areaEntity, Set<RoleEntity> role, List<ShopReviewEntity> shopReview) {
         this.id = id;
         this.name = name;
         this.areaEntity = areaEntity;
-        this.userRole = userRole;
+        this.role = role;
         this.shopReview = shopReview;
     }
 
@@ -65,12 +65,12 @@ public class UserEntity extends BaseEntity {
         this.areaEntity = areaEntity;
     }
 
-    public Set<UserRoleEntity> getUserRole() {
-        return userRole;
+    public Set<RoleEntity> getRole() {
+        return role;
     }
 
-    public void setUserRole(Set<UserRoleEntity> userRole) {
-        this.userRole = userRole;
+    public void setRole(Set<RoleEntity> role) {
+        this.role = role;
     }
 
     public List<ShopReviewEntity> getShopReview() {
@@ -87,7 +87,7 @@ public class UserEntity extends BaseEntity {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", areaEntity=" + areaEntity +
-                ", userRole=" + userRole +
+                ", role=" + role +
                 ", shopReview=" + shopReview +
                 '}';
     }

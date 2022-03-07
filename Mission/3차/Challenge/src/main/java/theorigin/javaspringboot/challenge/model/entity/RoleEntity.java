@@ -16,30 +16,27 @@ public class RoleEntity extends BaseEntity {
 
     private String name;
 
-    @OneToMany(targetEntity = UserRoleEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "roleEntity")
-    private Set<UserRoleEntity> userRole = new HashSet<>();
+    @OneToOne(mappedBy = "role")
+    private ShopEntity shop;
 
-    @OneToMany(targetEntity = ShopRoleEntity.class,
+    @OneToMany(targetEntity = ShopPostEntity.class,
             fetch = FetchType.LAZY,
             mappedBy = "roleEntity")
-    private List<ShopRoleEntity> shopRole = new ArrayList<>();
+    private List<ShopPostEntity> shopPost = new ArrayList<>();
 
-    @OneToMany(targetEntity = ShopPostRoleEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "roleEntity")
-    private List<ShopPostRoleEntity> shopPostRole = new ArrayList<>();
+    @ManyToOne(targetEntity = UserEntity.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private UserEntity userEntity;
 
     public RoleEntity() {
     }
 
-    public RoleEntity(Long id, String name, Set<UserRoleEntity> userRole, List<ShopRoleEntity> shopRole, List<ShopPostRoleEntity> shopPostRole) {
+    public RoleEntity(Long id, String name, ShopEntity shop, List<ShopPostEntity> shopPost, UserEntity userEntity) {
         this.id = id;
         this.name = name;
-        this.userRole = userRole;
-        this.shopRole = shopRole;
-        this.shopPostRole = shopPostRole;
+        this.shop = shop;
+        this.shopPost = shopPost;
+        this.userEntity = userEntity;
     }
 
     public Long getId() {
@@ -58,28 +55,28 @@ public class RoleEntity extends BaseEntity {
         this.name = name;
     }
 
-    public Set<UserRoleEntity> getUserRole() {
-        return userRole;
+    public ShopEntity getShop() {
+        return shop;
     }
 
-    public void setUserRole(Set<UserRoleEntity> userRole) {
-        this.userRole = userRole;
+    public void setShop(ShopEntity shop) {
+        this.shop = shop;
     }
 
-    public List<ShopRoleEntity> getShopRole() {
-        return shopRole;
+    public List<ShopPostEntity> getShopPost() {
+        return shopPost;
     }
 
-    public void setShopRole(List<ShopRoleEntity> shopRole) {
-        this.shopRole = shopRole;
+    public void setShopPost(List<ShopPostEntity> shopPost) {
+        this.shopPost = shopPost;
     }
 
-    public List<ShopPostRoleEntity> getShopPostRole() {
-        return shopPostRole;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setShopPostRole(List<ShopPostRoleEntity> shopPostRole) {
-        this.shopPostRole = shopPostRole;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     @Override
@@ -87,9 +84,9 @@ public class RoleEntity extends BaseEntity {
         return "RoleEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", userRole=" + userRole +
-                ", shopRole=" + shopRole +
-                ", shopPostRole=" + shopPostRole +
+                ", shop=" + shop +
+                ", shopPost=" + shopPost +
+                ", userEntity=" + userEntity +
                 '}';
     }
 }

@@ -16,10 +16,9 @@ public class ShopPostEntity extends BaseEntity {
 
     private String content;
 
-    @OneToMany(targetEntity = ShopPostRoleEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "shopPostEntity")
-    private List<ShopPostRoleEntity> shopPostRole = new ArrayList<>();
+    @ManyToOne(targetEntity = RoleEntity.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private RoleEntity roleEntity;
 
     @ManyToOne(targetEntity = ShopEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "shop_id")
@@ -28,11 +27,11 @@ public class ShopPostEntity extends BaseEntity {
     public ShopPostEntity() {
     }
 
-    public ShopPostEntity(Long id, String title, String content, List<ShopPostRoleEntity> shopPostRole, ShopEntity shopEntity) {
+    public ShopPostEntity(Long id, String title, String content, RoleEntity roleEntity, ShopEntity shopEntity) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.shopPostRole = shopPostRole;
+        this.roleEntity = roleEntity;
         this.shopEntity = shopEntity;
     }
 
@@ -60,12 +59,12 @@ public class ShopPostEntity extends BaseEntity {
         this.content = content;
     }
 
-    public List<ShopPostRoleEntity> getShopPostRole() {
-        return shopPostRole;
+    public RoleEntity getRoleEntity() {
+        return roleEntity;
     }
 
-    public void setShopPostRole(List<ShopPostRoleEntity> shopPostRole) {
-        this.shopPostRole = shopPostRole;
+    public void setRoleEntity(RoleEntity roleEntity) {
+        this.roleEntity = roleEntity;
     }
 
     public ShopEntity getShopEntity() {
@@ -82,8 +81,9 @@ public class ShopPostEntity extends BaseEntity {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", shopPostRole=" + shopPostRole +
+                ", roleEntity=" + roleEntity +
                 ", shopEntity=" + shopEntity +
                 '}';
     }
+
 }
