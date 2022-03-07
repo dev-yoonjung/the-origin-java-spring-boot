@@ -23,6 +23,6 @@ Basic Mission에서 만들었던 서비스를 바탕으로, 좀더 다양한 정
 
 ## 스크린샷
 
-![image](https://user-images.githubusercontent.com/98807166/157376294-3a4f4b32-9d5f-478e-bad0-38b16b4bbfe4.png)
+![image](https://user-images.githubusercontent.com/98807166/157376921-15d74ecb-d710-4277-aaca-ac2d5d1d632d.png)
 
 
