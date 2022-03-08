@@ -1,4 +1,1 @@
-2022-03-04 22:55:37,421 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-03-04 22:55:48,860 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] method name: [readPost]
-2022-03-04 22:55:48,868 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] return type: [class theorigin.javaspringboot.jpa.PostDTO]
-2022-03-04 22:55:48,870 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] return value: [PostDTO{id=1, title='TEST POST 3', content='this is test post in board that has boardId = 2', writer='yoonjung', boardId=0}]
+2022-03-08 16:25:18,039 WARN theorigin.javaspringboot.jpa.PostController [http-nio-8080-exec-2] ValidTestDTO{notNullString='not null string', notEmptyString=' ', notBlankString='not blank', notEmptyStringList=[not empty element]}

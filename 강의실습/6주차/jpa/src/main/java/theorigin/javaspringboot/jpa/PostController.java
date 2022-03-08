@@ -10,6 +10,7 @@ import theorigin.javaspringboot.jpa.aspect.LogExecutionTime;
 import theorigin.javaspringboot.jpa.aspect.LogArguments;
 import theorigin.javaspringboot.jpa.aspect.LogReturn;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class PostController {
     @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void createPost(@RequestBody PostDTO postDTO) {
+    public void createPost(@RequestBody @Valid PostDTO postDTO) {
         this.postService.createPost(postDTO);
     }
 
@@ -62,6 +63,11 @@ public class PostController {
         logger.info("INFO Log Message");
         logger.warn("WARN Log Message");
         logger.error("ERROR Log Message");
+    }
+
+    @PostMapping("/valid-test")
+    public void validTest(@RequestBody @Valid ValidTestDTO dto) {
+        logger.warn(dto.toString());
     }
 
 }

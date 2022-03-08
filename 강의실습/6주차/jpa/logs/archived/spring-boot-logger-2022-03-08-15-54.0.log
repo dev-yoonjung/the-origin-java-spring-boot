@@ -1,0 +1,4 @@
+2022-03-08 15:54:15,888 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-1] method description: [public void theorigin.javaspringboot.jpa.PostController.createPost(theorigin.javaspringboot.jpa.PostDTO)]
+2022-03-08 15:54:15,896 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-1] method name: [createPost]
+2022-03-08 15:54:15,897 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-1] declaring class: [class theorigin.javaspringboot.jpa.PostController]
+2022-03-08 15:54:15,898 TRACE theorigin.javaspringboot.jpa.aspect.LoggingAspect [http-nio-8080-exec-1] argument: [PostDTO{id=0, title='null', content='Validation user input', writer='yoonjung', boardId=0}]

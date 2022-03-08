@@ -1,16 +1,28 @@
 package theorigin.javaspringboot.jpa;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class PostDTO {
 
     private int id;
 
+    @NotNull
     private String title;
 
+    @NotBlank
+    @Size(max = 40, message = "size under 40")
     private String content;
 
+    @Size(min = 3, max = 10, message = "size between 3 - 10")
     private String writer;
 
     private int boardId;
+
+    @Valid
+    private ValidTestDTO validTestDTO;
 
     public PostDTO() {
     }
