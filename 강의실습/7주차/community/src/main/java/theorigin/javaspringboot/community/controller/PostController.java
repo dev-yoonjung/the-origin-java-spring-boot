@@ -24,7 +24,7 @@ public class PostController {
     public ResponseEntity<PostDTO> createPost(@PathVariable("boardId") Long boardId,
                                               @RequestBody PostDTO dto) {
         PostDTO result = this.postService.create(boardId, dto);
-        return ResponseEntity.ok(result.passwordMasked());
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("/{postId}")
@@ -32,7 +32,7 @@ public class PostController {
                                             @PathVariable("postId") Long postId) {
         PostDTO postDTO = this.postService.read(boardId, postId);
         if (postDTO == null) return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(postDTO.passwordMasked());
+        return ResponseEntity.ok(postDTO);
     }
 
     @GetMapping("")
