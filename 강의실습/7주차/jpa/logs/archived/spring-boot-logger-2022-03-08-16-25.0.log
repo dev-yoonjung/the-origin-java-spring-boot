@@ -1,0 +1,1 @@
+2022-03-08 16:25:18,039 WARN theorigin.javaspringboot.jpa.PostController [http-nio-8080-exec-2] ValidTestDTO{notNullString='not null string', notEmptyString=' ', notBlankString='not blank', notEmptyStringList=[not empty element]}

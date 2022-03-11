@@ -1,0 +1,6 @@
+2022-03-03 21:28:04,791 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] custom property: test-property
+2022-03-03 21:28:04,799 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] comma list item: comma
+2022-03-03 21:28:04,799 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] comma list item: sparatedmlist
+2022-03-03 21:28:04,799 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] comma list item: to
+2022-03-03 21:28:04,800 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] comma list item: value
+2022-03-03 21:28:04,800 INFO theorigin.javaspringboot.jpa.config.DemoConfig [main] default property: default-property

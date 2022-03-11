@@ -1,0 +1,29 @@
+2022-03-11 10:17:34,611 DEBUG org.springframework.boot.availability.ApplicationAvailabilityBean [SpringApplicationShutdownHook] Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2022-03-11 10:17:34,615 DEBUG org.springframework.context.support.AbstractApplicationContext [SpringApplicationShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@759fad4, started on Fri Mar 11 10:15:34 KST 2022
+2022-03-11 10:17:34,615 DEBUG org.springframework.core.env.PropertySourcesPropertyResolver [SpringApplicationShutdownHook] Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2022-03-11 10:17:34,617 DEBUG org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [SpringApplicationShutdownHook] Stopping beans in phase 2147483647
+2022-03-11 10:17:34,618 DEBUG org.springframework.context.support.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerGracefulShutdown' completed its stop procedure
+2022-03-11 10:17:34,619 DEBUG org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [SpringApplicationShutdownHook] Stopping beans in phase 2147483646
+2022-03-11 10:17:34,777 DEBUG org.springframework.context.support.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerStartStop' completed its stop procedure
+2022-03-11 10:17:34,778 DEBUG org.springframework.jmx.export.MBeanExporter [SpringApplicationShutdownHook] Unregistering JMX-exposed beans on shutdown
+2022-03-11 10:17:34,778 DEBUG org.springframework.jmx.support.MBeanRegistrationSupport [SpringApplicationShutdownHook] Unregistering JMX-exposed beans
+2022-03-11 10:17:34,779 DEBUG org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringApplicationShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-11 10:17:34,779 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-11 10:17:34,779 DEBUG org.hibernate.internal.SessionFactoryImpl [SpringApplicationShutdownHook] HHH000031: Closing
+2022-03-11 10:17:34,780 DEBUG org.hibernate.type.spi.TypeConfiguration$Scope [SpringApplicationShutdownHook] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@726409c5] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@986b619]
+2022-03-11 10:17:34,780 DEBUG org.hibernate.service.internal.AbstractServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2022-03-11 10:17:34,781 DEBUG org.hibernate.boot.registry.internal.BootstrapServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2022-03-11 10:17:34,781 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-11 10:17:34,781 DEBUG com.zaxxer.hikari.pool.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2022-03-11 10:17:34,782 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn0: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,783 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn1: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,783 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn2: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,783 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn3: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn4: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn5: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn6: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn7: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn8: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,784 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn9: url=jdbc:h2:mem:testdb user=SA: (connection evicted)
+2022-03-11 10:17:34,785 DEBUG com.zaxxer.hikari.pool.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2022-03-11 10:17:34,785 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

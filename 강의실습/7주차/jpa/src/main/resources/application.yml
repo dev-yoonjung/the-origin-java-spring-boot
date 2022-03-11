@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: test
+
+logging:
+  level:
+    theorigin.javaspringboot.jpa.handler: debug
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health, info, loggers, prometheus
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+      show-components: always
+    info:
+      enabled: true
+    loggers:
+      enabled: true
+    prometheus:
+      enabled: true
