@@ -1,1 +1,2 @@
-2022-03-11 10:32:51,292 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public void theorigin.javaspringboot.jpa.PostController.createPost(theorigin.javaspringboot.jpa.PostDTO)]
+2022-03-12 12:05:36,065 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-7] [b7df9477] start request: GET /except/1
+2022-03-12 12:05:36,076 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-7] [b7df9477], send response: 400

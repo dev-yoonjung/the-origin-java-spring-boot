@@ -27,7 +27,15 @@
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </root>
+    <logger name="theorigin.javaspringboot.jpa.filter" level="debug" additivity="false">
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
+    </logger>
     <logger name="theorigin.javaspringboot.jpa.handler" level="debug" additivity="false">
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
+    </logger>
+    <logger name="theorigin.javaspringboot.jpa.interceptor" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>

@@ -1,0 +1,4 @@
+2022-03-12 11:48:11,040 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] [19fb6f50] start request: POST /post
+2022-03-12 11:48:11,047 INFO theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] * response status code: 200
+2022-03-12 11:48:11,250 INFO theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] * response status code: 201
+2022-03-12 11:48:11,250 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] [19fb6f50], send response: 201

@@ -3,8 +3,6 @@ package theorigin.javaspringboot.jpa;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import theorigin.javaspringboot.jpa.exception.BaseException;
-import theorigin.javaspringboot.jpa.exception.ErrorResponseDTO;
 import theorigin.javaspringboot.jpa.exception.PostNotInBoardException;
 import theorigin.javaspringboot.jpa.exception.PostNotExistException;
 
