@@ -1,0 +1,5 @@
+2022-03-13 14:52:48,038 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [Test worker] [488f4602] start request: GET /post/3
+2022-03-13 14:52:48,056 INFO theorigin.javaspringboot.jpa.interceptor.HeaderLoggingInterceptor [Test worker] start precessing of readPost
+2022-03-13 14:52:48,194 TRACE theorigin.javaspringboot.jpa.interceptor.HeaderLoggingInterceptor [Test worker] Content-Type: application/json
+2022-03-13 14:52:48,195 INFO theorigin.javaspringboot.jpa.interceptor.HeaderLoggingInterceptor [Test worker] start processing of readPost
+2022-03-13 14:52:48,196 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [Test worker] [488f4602], send response: 200

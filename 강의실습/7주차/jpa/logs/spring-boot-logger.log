@@ -1,2 +1,2 @@
-2022-03-12 12:05:36,065 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-7] [b7df9477] start request: GET /except/1
-2022-03-12 12:05:36,076 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-7] [b7df9477], send response: 400
+2022-03-13 15:42:43,207 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [Test worker] [ee4577fe] start request: POST /board
+2022-03-13 15:42:43,354 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [Test worker] [ee4577fe], send response: 200

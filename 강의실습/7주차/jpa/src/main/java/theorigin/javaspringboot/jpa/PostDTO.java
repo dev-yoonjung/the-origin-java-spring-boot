@@ -18,17 +18,23 @@ public class PostDTO {
     @Size(min = 3, max = 10, message = "size between 3 - 10")
     private String writer;
 
-    private int boardId;
+//    private int boardId;
 
     public PostDTO() {
     }
 
-    public PostDTO(int id, String title, String content, String writer, int boardId) {
+    public PostDTO(
+            int id,
+            String title,
+            String content,
+            String writer
+//            , int boardId
+    ) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
-        this.boardId = boardId;
+//        this.boardId = boardId;
     }
 
     public int getId() {
@@ -63,13 +69,13 @@ public class PostDTO {
         this.writer = writer;
     }
 
-    public int getBoardId() {
-        return boardId;
-    }
+//    public int getBoardId() {
+//        return boardId;
+//    }
 
-    public void setBoardId(int boardId) {
-        this.boardId = boardId;
-    }
+//    public void setBoardId(int boardId) {
+//        this.boardId = boardId;
+//    }
 
     @Override
     public String toString() {
@@ -78,7 +84,7 @@ public class PostDTO {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
-                ", boardId=" + boardId +
+//                ", boardId=" + boardId +
                 '}';
     }
 }

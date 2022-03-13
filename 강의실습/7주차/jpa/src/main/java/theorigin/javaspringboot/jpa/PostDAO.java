@@ -26,7 +26,7 @@ public class PostDAO {
         postEntity.setTitle(postDTO.getTitle());
         postEntity.setContent(postDTO.getContent());
         postEntity.setWriter(postDTO.getWriter());
-        postEntity.setBoardEntity(null);
+//        postEntity.setBoardEntity(null);
         this.postRepository.save(postEntity);
     }
 

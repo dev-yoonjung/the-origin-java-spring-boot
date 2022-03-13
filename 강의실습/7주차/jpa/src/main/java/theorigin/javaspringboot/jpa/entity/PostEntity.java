@@ -16,19 +16,24 @@ public class PostEntity extends BaseEntity {
 
     private String writer;
 
-    @ManyToOne(targetEntity = BoardEntity.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "board_id")
-    private BoardEntity boardEntity;
+//    @ManyToOne(targetEntity = BoardEntity.class, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "board_id")
+//    private BoardEntity boardEntity;
 
     public PostEntity() {
     }
 
-    public PostEntity(Long id, String title, String content, String writer, BoardEntity boardEntity) {
+    public PostEntity(Long id,
+                      String title,
+                      String content,
+                      String writer
+//                    , BoardEntity boardEntity
+    ) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
-        this.boardEntity = boardEntity;
+//        this.boardEntity = boardEntity;
     }
 
     public Long getId() {
@@ -63,13 +68,13 @@ public class PostEntity extends BaseEntity {
         this.writer = writer;
     }
 
-    public BoardEntity getBoardEntity() {
-        return boardEntity;
-    }
+//    public BoardEntity getBoardEntity() {
+//        return boardEntity;
+//    }
 
-    public void setBoardEntity(BoardEntity boardEntity) {
-        this.boardEntity = boardEntity;
-    }
+//    public void setBoardEntity(BoardEntity boardEntity) {
+//        this.boardEntity = boardEntity;
+//    }
 
     @Override
     public String toString() {
@@ -78,7 +83,7 @@ public class PostEntity extends BaseEntity {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
-                ", boardEntity=" + boardEntity +
+//                ", boardEntity=" + boardEntity +
                 '}';
     }
 }
