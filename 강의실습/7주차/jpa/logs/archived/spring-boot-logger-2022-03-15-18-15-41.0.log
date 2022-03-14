@@ -1,0 +1,2 @@
+2022-03-15 18:15:41,865 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] [d6e8190b] start request: GET /actuator/prometheus
+2022-03-15 18:15:41,960 DEBUG theorigin.javaspringboot.jpa.filter.TransactionLogFilter [http-nio-8080-exec-2] [d6e8190b], send response: 200
