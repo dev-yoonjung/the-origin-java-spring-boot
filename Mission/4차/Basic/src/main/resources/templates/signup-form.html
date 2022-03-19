@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Signup</title>
+</head>
+<body>
+<div>
+    <div>
+        <input type="text" id="username" placeholder="아이디">
+    </div>
+    <div>
+        <input type="password" id="password" placeholder="비밀번호">
+    </div>
+    <div>
+        <input type="password" id="password_check" placeholder="비밀번호 확인">
+    </div>
+    <div>
+        <input type="radio" id="seocho" name="area" value="1" checked="checked">
+        <label for="seocho">서울시 서초구 서초동, 37.4877° N, 127.0174° E</label>
+    </div>
+    <div>
+        <input type="radio" id="yeoksam" name="area" value="2">
+        <label for="yeoksam">서울시 강남구 역삼동, 37.4999° N, 127.0374° E</label>
+    </div>
+    <div>
+        <input type="radio" id="samseong" name="area" value="3">
+        <label for="samseong">서울시 강남구 삼성동, 37.5140° N, 127.0565° E</label>
+    </div>
+    <div>
+        is shop owner&nbsp;<input type="checkbox" id="is_shop_owner"><br>
+    </div>
+    <button onclick="signUp()">회원가입</button>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function signUp() {
+        const password = document.getElementById('password').value;
+        const passwordCheck = document.getElementById('password_check').value;
+        const areaElementList = document.getElementsByName('area');
+        let area_id = undefined;
+
+        for (let i = 0; i < areaElementList.length; i++) {
+            const element = areaElementList[i];
+            if (element.checked) {
+                area_id = element.value;
+                break;
+            }
+        }
+
+        if (password !== passwordCheck) alert('비밀번호가 일치하지 않습니다.');
+        else axios.post('/user/sign-up', {
+            username: document.getElementById('username').value,
+            password: password,
+            is_shop_owner: document.getElementById('is_shop_owner').checked,
+            area_id: area_id || 1
+        }).then(response => {
+            if (response.status === 200) location.href = '/user/login'
+        }).catch(error => {
+            alert("회원가입에 실패했습니다.");
+        })
+    }
+</script>
+</html>

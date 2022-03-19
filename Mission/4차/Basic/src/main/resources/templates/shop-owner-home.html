@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.w3.org/1999/xhtml"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Shop Owner Home</title>
+</head>
+<body>
+  <h3>Hello Shop Owner!</h3>
+  <form th:action="@{/user/logout}" method="post">
+    <input type="submit" th:value="로그아웃" />
+  </form>
+</body>
+</html>
