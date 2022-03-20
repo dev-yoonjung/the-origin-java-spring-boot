@@ -40,22 +40,29 @@ Spring Security를 활용하여, 로그인, 회원가입 기능을 구현해 봅
 ## 스크린샷
 
 1. 초기 진입(localhost:8080/home)
+
    ![image](https://user-images.githubusercontent.com/98807166/159119631-c6e2ad25-3b2a-4a86-acb5-c37c41c6f0fd.png)
 
 2. 회원가입(localhost:8080/user/sign-up)
    1. 일반 유저: 로그인 후 메인 화면(localhost:8080/home)으로 이동
+   
       ![image](https://user-images.githubusercontent.com/98807166/159119713-f2a4161b-4fae-4987-8b6b-7f591adf1c4c.png)
       ![image](https://user-images.githubusercontent.com/98807166/159119732-2b69f87a-5e4e-4d71-ae6a-45eb747089ed.png)
       ![image](https://user-images.githubusercontent.com/98807166/159119769-327fb582-e9f6-4eab-a78d-b305b187ada1.png)
+   
    2. 상점 주인: 로그인 후 상점 주인 페이지(localhost:8080/shop/home)으로 이동
+   
       ![image](https://user-images.githubusercontent.com/98807166/159119868-ea5d17ec-83c2-4ce8-a191-ad2859093a6a.png)
       ![image](https://user-images.githubusercontent.com/98807166/159119893-c1f90024-2739-461e-8168-8ad8311481e1.png)
       ![image](https://user-images.githubusercontent.com/98807166/159119929-40c25d29-a39d-4ea1-b71d-ed3d126f0004.png)
+   
       1. 일반 유저로 상점 주인 페이지(localhost:8080/shop/home)로 이동 불가
+      
          ![image](https://user-images.githubusercontent.com/98807166/159119979-f4451178-cdfc-4e76-baaa-9dcb671bbe01.png)
          ![image](https://user-images.githubusercontent.com/98807166/159119995-7796dfae-5b08-4811-8ee2-cf93d2e0698b.png)
 
 3. 로그아웃
+
    ![image](https://user-images.githubusercontent.com/98807166/159119820-5d4c49cb-66ec-42a6-a5d8-115bc07dc3d8.png)
    ![image](https://user-images.githubusercontent.com/98807166/159119839-bf5db03d-fb63-4715-bdcd-8e2a0cbdc155.png)
    ![image](https://user-images.githubusercontent.com/98807166/159119851-56c1d2f3-41e4-49ea-82f1-f26c05d7a4e7.png)
