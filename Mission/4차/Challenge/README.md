@@ -29,3 +29,16 @@ Spring Security의 기능은 대부분 Java Servlet Filter를 구성함으로서
 
 ## 스크린샷
 
+클라이언트 port: 8080
+
+![image](https://user-images.githubusercontent.com/98807166/159506745-5195b564-579b-49ea-b8f8-d413517f0a6d.png)
+
+로그인 버튼 시 sso server port: 9000 으로 이동
+
+![image](https://user-images.githubusercontent.com/98807166/159506908-1864db81-dee3-4214-8c83-9f4e7ae44b18.png)
+
+로그인 성공 후 클라이언트 port로 이동
+
+![image](https://user-images.githubusercontent.com/98807166/159507131-84449e55-d1fb-4905-bd1a-59f1f735fa7e.png)
+
+![image](https://user-images.githubusercontent.com/98807166/159507201-316c32b8-bbf8-4e97-9ce9-ef168ad899ea.png)

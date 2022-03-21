@@ -46,7 +46,7 @@ public class RegisteredClientService implements RegisteredClientRepository {
 
         RedirectEntity redirectEntity2 = new RedirectEntity(
                 newClient,
-                "http://127.0.0.1:8080/authorized"
+                "http://127.0.0.1:8080/request-login"
         );
         this.redirectRepository.save(redirectEntity2);
     }
