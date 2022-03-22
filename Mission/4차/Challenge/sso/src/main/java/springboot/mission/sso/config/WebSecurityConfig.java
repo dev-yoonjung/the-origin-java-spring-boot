@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import springboot.mission.sso.infra.LoginSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -27,6 +29,7 @@ public class WebSecurityConfig {
                 .formLogin(formLogin -> {
                     formLogin.loginPage("/user/login");
                     formLogin.permitAll();
+                    formLogin.successHandler(successHandler());
                 })
                 .logout(logout -> {
                     logout.logoutUrl("/logout");
@@ -45,5 +48,10 @@ public class WebSecurityConfig {
         provider.setUserDetailsService(userDetailsService);
         provider.setPasswordEncoder(passwordEncoder);
         return provider;
+    }
+
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+        return new LoginSuccessHandler();
     }
 }
