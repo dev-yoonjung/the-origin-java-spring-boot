@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: local
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: health, info, loggers, shutdown
+  endpoint:
+    health:
+      show-details: always
+      show-components: always

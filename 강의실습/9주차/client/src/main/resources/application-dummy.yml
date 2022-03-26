@@ -1,0 +1,4 @@
+ncp:
+  api:
+    access-key: dummy-access-key
+    secret-key: dummy-secret-key
