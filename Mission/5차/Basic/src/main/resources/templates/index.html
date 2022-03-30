@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Home</title>
+    </head>
+    <body>
+        <div sec:authorize="isAnonymous()">
+            <h2>Hello! Please, sign in!</h2>
+            <button onclick="location.href = '/user/login'">로그인</button>
+            <button onclick="location.href = '/user/signup'">회원가입</button>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <h3>
+                Welcome back, <span sec:authentication="name"></span>!
+            </h3>
+            <button onclick="getLocation()" style="margin-bottom: 5px;">My Location</button>
+            <form th:action="@{/user/logout}" method="post">
+                <input type="submit" th:value="로그아웃">
+            </form>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const { latitude, longitude } = position.coords;
+            axios.get(`/get-location-info?latitude=${latitude}&longitude=${longitude}`).then(response => {
+                if (response.status === 200) {
+                    const {regionMajor, regionMinor, regionPatch} = response.data
+                    alert(`가장 가까운 장소는 ${regionMajor}, ${regionMinor}, ${regionPatch}입니다.`)
+                }
+            }).catch(error => {
+                console.error(error);
+            })
+        }
+    </script>
+</html>
