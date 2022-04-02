@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aquashdw2/spring-cloud-config.git
+          clone-on-start: true
+          basedir: .config-git-remote
+#        native:
+#          search-locations: file:/C:/Users/o_ov0/Desktop/project-lion/강의실습/10주차/cloud-config/config-native-local
+  security:
+    user:
+      name: root
+      password: root
